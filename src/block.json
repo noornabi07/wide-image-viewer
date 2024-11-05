@@ -29,7 +29,7 @@
       "type": "object",
       "default": {
         "height": { "desktop": "400px", "tablet": "", "mobile": "" },
-        "imgUrl": "https://terrymun.github.io/paver/demo/images/p5.jpg",
+        "imgUrl": "https://terrymun.github.io/paver/demo/images/p2.jpg",
         "strtPosition": 0.5,
         "isFailedMsg": true,
         "position": "after",
