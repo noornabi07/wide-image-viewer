@@ -1,0 +1,60 @@
+$primaryColor: #4527a4;
+
+.wp-block-b-blocks-wide-image-viewer {
+  box-sizing: border-box;
+
+  // .panorama {
+  //   overflow-x: scroll;
+  //   overflow-y: hidden;
+  //   img {
+  //     height: 100%;
+  //   }
+  // }
+
+  // ---------------------------
+
+  // .panorama {
+  //   overflow-x: auto; /* Allows smooth scrolling horizontally */
+  //   overflow-y: hidden;
+  //   height: 400px;
+  //   -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+  // }
+
+  // .panorama img {
+  //   height: 100%;
+  //   width: auto; /* Ensures the full width of the image is used */
+  //   min-width: 100%; /* Ensures the image fills the container */
+  // }
+
+  // -----------------------------------
+
+  .panorama {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .bBlocksTestPurpose {
+    p {
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+
+  .icon {
+    font-style: inherit;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+}

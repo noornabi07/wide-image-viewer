@@ -1,0 +1,62 @@
+$primaryColor: #4527a4;
+
+.bBlocksInspectorInfo {
+  padding: 6px;
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+  }
+}
+
+.wp-block-b-blocks-wide-image-viewer {
+  .selectHelp {
+    color: #616063;
+  }
+
+  .uploadImg {
+    padding-top: 10px;
+  }
+
+  .startPosition {
+    width: 100%;
+    h2 {
+      text-transform: capitalize;
+    }
+  }
+  .position-buttons {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .position-button {
+    padding: 10px 24px;
+    background-color: rgb(66, 28, 202);
+    color: #fff;
+    border: 1px solid gray;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .position-button:hover {
+    background-color: #e0e0e0;
+  }
+
+  .position-button.selected {
+    background-color: #0073aa;
+    color: white;
+  }
+
+  .startPosition {
+    margin-top: 10px;
+  }
+  .overly {
+    padding-bottom: 12px;
+  }
+  .filerMsg {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

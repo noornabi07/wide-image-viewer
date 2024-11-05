@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "b-blocks/wide-image-viewer",
+  "version": "1.0.0",
+  "title": "Wide Image Viewer",
+  "category": "widgets",
+  "description": "Embed ultra-wide format of panoramas in your website.",
+  "keywords": ["Wide Image Viewer", "panorama", "viewport", "wide viewport"],
+  "textdomain": "b-blocks",
+  "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "purposeType": {
+      "type": "string",
+      "default": "test"
+    },
+    "colors": {
+      "type": "object",
+      "default": {
+        "color": "black",
+        "bg": "#B1C5A4"
+      }
+    },
+
+    "paver": {
+      "type": "object",
+      "default": {
+        "height": { "desktop": "400px", "tablet": "", "mobile": "" },
+        "imgUrl": "https://terrymun.github.io/paver/demo/images/p5.jpg",
+        "strtPosition": 0.5,
+        "isFailedMsg": true,
+        "position": "after",
+        "failedMsg": "Scroll left/right to pan through panorama."
+      }
+    }
+  },
+  "supports": {
+    "align": false,
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "editorScript": [
+    "file:./index.js",
+    "bplwiv-paver-js",
+    "bplwiv-throttle-debounce-js",
+    "jquery",
+    "wp-api"
+  ],
+  "editorStyle": ["file:./index.css", "bplwiv-paver-style"],
+  "style": ["file:./view.css", "bplwiv-paver-style"],
+  "render": "file:./render.php",
+  "viewScript": [
+    "file:./view.js",
+    "bplwiv-paver-js",
+    "bplwiv-throttle-debounce-js",
+    "jquery"
+  ]
+}
