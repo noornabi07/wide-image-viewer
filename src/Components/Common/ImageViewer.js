@@ -1,20 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 
 const ImageViewer = ({ attributes, device }) => {
-  const { paver } = attributes;
+  const { paver, align } = attributes;
   const { strtPosition, position, failedMsg, isFailedMsg } = paver;
   const panoramaRef = useRef(null);
 
   useEffect(() => {
     const $panorama = window.jQuery(panoramaRef.current);
 
-    // Destroy previous Paver instance if it exists
-    if ($panorama.data('paver')) {
-      $panorama.paver('destroy');
-    }
-
-    // Initialize Paver with new image URL
-    $panorama.paver({
+    const options = {
       failureMessage: failedMsg,
       failureMessageInsert: position,
       gracefulFailure: isFailedMsg,
@@ -34,8 +28,17 @@ const ImageViewer = ({ attributes, device }) => {
       tiltSmoothingFunction: 'gaussian',
       tiltThresholdPortrait: 12,
       tiltThresholdLandscape: 24
-    });
-  }, [paver.imgUrl, paver.height[device]]);
+    }
+
+    // Initialize Paver with new image URL
+    $panorama.paver(options);
+
+    return () => {
+      if ($panorama.data('paver')) {
+        $panorama.paver('destroy');
+      }
+    }
+  }, [paver.imgUrl, paver.height[device], align]);
 
 
 

@@ -16,7 +16,7 @@ const General = ({ attributes, setAttributes, setDevice, device }) => {
         <Device onChange={val => setDevice(val)} />
       </PanelRow>
 
-      <UnitControl className='mb5' value={paver?.height[device]} onChange={val => setAttributes({ paver: updateData(paver, val, "height", device) })} beforeIcon='grid-view' step={1} max={418} min={300} ></UnitControl>
+      <UnitControl className='mb5' value={paver?.height[device]} onChange={val => setAttributes({ paver: updateData(paver, val, "height", device) })} beforeIcon='grid-view' step={1} max={600} min={300} ></UnitControl>
 
 
       <InlineMediaUpload className="uploadImg" label={__("Upload Or Insert Image", "b-blocks")} value={paver?.imgUrl} onChange={val => {
@@ -28,7 +28,7 @@ const General = ({ attributes, setAttributes, setDevice, device }) => {
 
       {/* Star Position */}
       <div className="startPosition">
-        <h2>Start Position</h2>
+        <h2>Image Position Starting</h2>
         <div className="position-buttons" style={{ display: 'flex' }}>
           <button
             className={`position-button ${paver.strtPosition === 0 ? 'selected' : ''}`}

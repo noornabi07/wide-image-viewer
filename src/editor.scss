@@ -32,9 +32,10 @@ $primaryColor: #4527a4;
   }
 
   .position-button {
-    padding: 10px 24px;
-    background-color: rgb(66, 28, 202);
-    color: #fff;
+    padding: 8px 24px;
+    background: #fff;
+    color: black;
+    font-size: 14px;
     border: 1px solid gray;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -45,7 +46,7 @@ $primaryColor: #4527a4;
   }
 
   .position-button.selected {
-    background-color: #0073aa;
+    background-color: #4527a4;
     color: white;
   }
 

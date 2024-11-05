@@ -3,6 +3,8 @@ import { getColorsCSS } from '../../../../Components/utils/getCSS';
 const Style = ({ attributes, id }) => {
 	const { colors, paver } = attributes;
 
+	console.log(paver);
+
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .bBlocksTestPurpose`;
 	const panoramaSl = `${blockSl} .panorama`;

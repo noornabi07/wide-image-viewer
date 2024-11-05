@@ -38,7 +38,7 @@
     }
   },
   "supports": {
-    "align": false,
+    "align": ["wide", "full"],
     "html": false
   },
   "example": {
