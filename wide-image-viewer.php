@@ -31,7 +31,7 @@ if (!class_exists('BPLWIVPlugin')) {
 
 			add_action('init', [$this, 'bplwiv_register_viewport_post_type']);
 			// Shortcode create here
-			add_shortcode('viewport_shortcode', [$this, 'bplwiv_viewport_shortcode_handler']);
+			add_shortcode('wide_img', [$this, 'bplwiv_wide_img_handler']);
 
 
 			add_filter('manage_viewport_posts_columns', [$this, 'viewportManageColumns'], 10);
@@ -109,7 +109,7 @@ if (!class_exists('BPLWIVPlugin')) {
 		}
 
 		// shortcode registration here 
-		function bplwiv_viewport_shortcode_handler($attributes)
+		function bplwiv_wide_img_handler($attributes)
 		{
 			$postID = $attributes['id'];
 			$post = get_post($postID);
@@ -132,7 +132,7 @@ if (!class_exists('BPLWIVPlugin')) {
 		{
 			if ($column_name == 'shortcode') {
 				echo '<div class="bPlAdminShortcode" id="bPlAdminShortcode-' . esc_attr($post_ID) . '">
-            <input value="[viewport_shortcode id=' . esc_attr($post_ID) . ']" onclick="copyBPlAdminShortcode(\'' . esc_attr($post_ID) . '\')" readonly>
+            <input value="[wide_img id=' . esc_attr($post_ID) . ']" onclick="copyBPlAdminShortcode(\'' . esc_attr($post_ID) . '\')" readonly>
             <span class="tooltip">Copy To Clipboard</span>
         </div>';
 			} elseif ($column_name == 'details') {
