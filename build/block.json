@@ -38,8 +38,19 @@
           "mobile": ""
         },
         "imgUrl": "https://terrymun.github.io/paver/demo/images/p2.jpg",
+        "title": "Please type your title",
+        "description": "Distinctively conceptualize optimal total linkage vis-a-vis market positioning intellectual capital. Distinctively whiteboard just.",
+        "titleTypo": {
+          "fontSize": 22
+        },
+        "desTypo": {
+          "fontSize": 17
+        },
+        "titleColor": "#fff",
+        "desColor": "#fff",
         "strtPosition": 0.5,
         "isFailedMsg": true,
+        "isOverly": false,
         "position": "after",
         "failedMsg": "Scroll left/right to pan through panorama."
       }

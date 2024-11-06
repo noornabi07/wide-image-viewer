@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 const ImageViewer = ({ attributes, device }) => {
   const { paver, align } = attributes;
-  const { strtPosition, position, failedMsg, isFailedMsg } = paver;
+  const { strtPosition, position, failedMsg, isFailedMsg, isOverly, title, description } = paver;
   const panoramaRef = useRef(null);
 
   useEffect(() => {
@@ -40,13 +40,23 @@ const ImageViewer = ({ attributes, device }) => {
     }
   }, [paver.imgUrl, paver.height[device], align]);
 
-
-
-
-
   return (
-    <div data-paver className="panorama paver--initialized paver--ready paver--off" ref={panoramaRef} key={paver.imgUrl} >
-      <img src={paver?.imgUrl} alt="Panorama" />
+    <div className="hero-section-container">
+      <div data-paver className="panorama paver--initialized paver--ready paver--off" ref={panoramaRef} key={paver.imgUrl} >
+        <img src={paver?.imgUrl} alt="Panorama" />
+
+        {/* Title and description overlay */}
+        {
+          isOverly && (
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h3 className='title'>{title}</h3>
+                <h5 className='description'>{description}</h5>
+              </div>
+            </div>
+          )
+        }
+      </div>
     </div>
   );
 };

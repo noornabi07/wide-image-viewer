@@ -1,12 +1,14 @@
+import { PanelColorSettings } from '@wordpress/block-editor';
 import { PanelBody, PanelRow, SelectControl, TextControl, ToggleControl, __experimentalUnitControl as UnitControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { produce } from 'immer';
-import { InlineMediaUpload, Label } from '../../../../../../Components';
+import { InlineMediaUpload, Label, Typography } from '../../../../../../Components';
 import { updateData } from '../../../../utils/functions';
 import { Device } from '../../../Panel/Device/Device';
 
 const General = ({ attributes, setAttributes, setDevice, device }) => {
   const { paver } = attributes;
+  const { titleTypo, desTypo, titleColor, desColor } = paver;
 
   return (
     <PanelBody className='bPlPanelBody' title={__('Viewport General Setting', 'b-blocks')} initialOpen={true}>
@@ -51,6 +53,99 @@ const General = ({ attributes, setAttributes, setDevice, device }) => {
         </div>
         <p>Determines the start position of the panorama: insert a value from 0 (left), 0.5 (center), 1 (right) image position.</p>
       </div>
+
+      {/* Show in overly */}
+      <ToggleControl
+        className='overly'
+        label={__('Show in overly', 'b-blocks')}
+        checked={paver.isOverly}
+        onChange={(value) =>
+          setAttributes({
+            paver: {
+              ...paver,
+              isOverly: value,
+            },
+          })
+        }
+      />
+
+
+      {
+        paver?.isOverly && (<>
+          <TextControl TextControl
+            className="mt10"
+            label={__("Image viewer title", "b-blocks")}
+            value={paver?.title}
+            onChange={(newTitle) => {
+              const newPaver = produce(paver, draft => {
+                draft.title = newTitle;
+              });
+              setAttributes({ paver: newPaver });
+            }}
+            placeholder={__("Type here title", "b-blocks")}
+          ></TextControl>
+
+          <Typography label={__('Title typo', 'b-blocks')}
+            value={titleTypo}
+            onChange={(val) => {
+              const newTypo = produce(paver, draft => {
+                draft.titleTypo = val
+              })
+              setAttributes({ paver: newTypo })
+            }}
+            defaults={{ fontSize: 22 }}
+          />
+
+          <TextControl
+            className="mt10"
+            label={__("Image viewer description", "b-blocks")}
+            value={paver?.description}
+            onChange={(newDes) => {
+              const newPaver = produce(paver, draft => {
+                draft.description = newDes;
+              });
+              setAttributes({ paver: newPaver });
+            }}
+            placeholder={__("Type here description", "b-blocks")}
+          ></TextControl>
+
+          <Typography label={__('Description typo', 'b-blocks')}
+            value={desTypo}
+            onChange={(val) => {
+              const newTypo = produce(paver, draft => {
+                draft.desTypo = val
+              })
+              setAttributes({ paver: newTypo })
+            }}
+            defaults={{ fontSize: 17 }}
+          />
+
+          <PanelColorSettings
+            title="Color Settings"
+            colorSettings={[
+              {
+                value: titleColor,
+                onChange: (color) => setAttributes({
+                  paver: { ...paver, titleColor: color }
+                }),
+                label: 'Title Color',
+              },
+              {
+                value: desColor,
+                onChange: (color) => setAttributes({
+                  paver: { ...paver, desColor: color }
+                }),
+                label: 'Description Color',
+              },
+            ]}
+          />
+
+        </>)
+      }
+
+
+
+
 
       {/* IsMessage Toggle Control */}
       <ToggleControl
