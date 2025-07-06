@@ -28,6 +28,15 @@ const General = ({ attributes, setAttributes, setDevice, device }) => {
         setAttributes({ paver: newPaverImg });
       }} />
 
+      <ToggleControl
+        className="mt10"
+        label="Active on hover"
+        checked={paver.isHoverMouse}
+        onChange={(value) =>
+          setAttributes({ paver: { ...paver, isHoverMouse: value } })
+        }
+      />
+
       {/* Star Position */}
       <div className="startPosition">
         <h2>Image Position Starting</h2>

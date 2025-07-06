@@ -49,6 +49,7 @@
         "titleColor": "#fff",
         "desColor": "#fff",
         "strtPosition": 0.5,
+        "isHoverMouse": false,
         "isFailedMsg": true,
         "isOverly": false,
         "position": "after",

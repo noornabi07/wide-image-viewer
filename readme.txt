@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors:		bplugins
+Contributors:		bplugins, noornabi2
 Donate link:		https://gum.co/wpdonate/
 Tags:				block, key1, key2, key3, key4
 Requires at least:	6.3+
