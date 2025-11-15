@@ -2,7 +2,7 @@ import { PanelColorSettings } from '@wordpress/block-editor';
 import { PanelBody, PanelRow, SelectControl, TextControl, ToggleControl, __experimentalUnitControl as UnitControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { produce } from 'immer';
-import { InlineMediaUpload, Label, Typography } from '../../../../../../Components';
+import { InlineMediaUpload, Label, Typography } from '../../../../../../bpl-tools/Components';
 import { updateData } from '../../../../utils/functions';
 import { Device } from '../../../Panel/Device/Device';
 

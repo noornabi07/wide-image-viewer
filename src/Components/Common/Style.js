@@ -1,4 +1,4 @@
-import { getColorsCSS, getTypoCSS } from '../../../../Components/utils/getCSS';
+import { getColorsCSS, getTypoCSS } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
 	const { colors, paver } = attributes;
